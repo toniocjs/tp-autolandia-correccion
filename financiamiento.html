@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTOLANDIA</title>
+    <link rel="icon" href="img/favicon.png" type="image" sizes="32x32">
+    <link rel="stylesheet" href="css/estilos.css">
+ <!-- api usada dolarhoy.com -->
+    <script>
+        function traer(){
+            var x=document.getElementsByClassName("ejemplo")
+            fetch('https://www.dolarsi.com/api/api.php?type=valoresprincipales')
+            .then(res=> res.json())
+            .then(data=>{
+                x[0].innerHTML=data[0].casa.nombre+": "+data[0].casa.compra
+                x[1].innerHTML=data[1].casa.nombre+": "+data[1].casa.compra
+            })            
+        }
+    </script>
+</head>
+<body>
+    <div class="div-contenedor">
+    <header class="header">
+        <h1 class="h1">
+            <a href="index.html" class="a"><span class="logo-auto">Auto</span><span class="logo-landia">Landia</span></a>
+        </h1>
+        
+    </header>  
+      <div class="div-nav">
+        <nav class="nav-menu">
+            <ul class="menu">
+                <li class="li"><a href="index.html" class="a">Inicio</a></li>
+                <li class="li"><a href="busca tu auto.html" class="a">Busca tu auto</a></li>
+                <li class="li"><a href="financiamiento.html" class="a">Financiamiento</a></li>
+                <li class="li"><a href="nosotros.html" class="a">Nosotros</a></li>
+                <li class="li"><a href="contacto.html" class="a">Contacto</a></li>
+            </ul>
+        </nav>
+        </div>
+    
+    <main class="contenido">
+        
+        <div class="financiamiento">
+        <div class="fi-info">
+            <div class="titulo-fi">
+                <h2><span>¿Buscás tu auto ideal?</span></h2>
+            </div>
+            <div class="parrafo-fi">
+                <p><span>En AUTOLANDIA, ofrecemos una amplia gama de servicios para que puedas encontrar el auto que estás buscando. Desde la búsqueda personalizada de tu auto ideal hasta la financiación online, estamos aquí para ayudarte en todo momento. Contamos con un equipo de expertos en la industria automotriz que te brindarán la mejor asesoría para que puedas tomar la mejor decisión de compra. Además, te acompañamos en todo el proceso para que puedas disfrutar de tu auto sin preocupaciones. No esperes más y contáctanos para que podamos ayudarte a encontrar el auto de tus sueños.</span></p>
+            </div>
+
+       
+            <div class="h6-fi">
+                <h6><span>Nuestros servicios:</span></h6>
+            </div>
+            <div class="a-fi">
+                <a href="https://www.santander.com.ar/personas/prendarios/autos" target="_blank" title="Financiate"><span>FINANCIACIÓN ONLINE</span></a>
+            </div>
+        </div>
+       
+        <div class="dolar">
+            <div class="fi-h1"><h1>Cotización Dolar</h1></div>
+            <div class="blue"><iframe style="width:320px;height:260px;border-radius:10px;box-shadow:2px 4px 4px rgb(0 0 0 / 25%);display:flex;justify-content:center;border:1px solid #bcbcbc" src="https://dolarhoy.com/i/cotizaciones/dolar-blue" frameborder="0"></iframe></div>
+            <div class="oficial"><iframe style="width:320px;height:260px;border-radius:10px;box-shadow:2px 4px 4px rgb(0 0 0 / 25%);display:flex;justify-content:center;border:1px solid #bcbcbc" src="https://dolarhoy.com/i/cotizaciones/dolar-bancos-y-casas-de-cambio" frameborder="0"></iframe></div>
+  <!-- api usada dolarhoy.com -->
+            <h1>Cotización Dolar:</h1>
+            <button onclick="traer()" class="boton-dolar">Visualizar</button>
+            <div class="ver-dolar">
+            <div class="ejemplo"></div>
+            <div class="ejemplo"></div>
+            </div>
+        </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>© 2023 by Autolandia. todos los derechos reservados </p>
+    </footer> 
+    </div>    
+</body>
+</html>
